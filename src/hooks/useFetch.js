@@ -19,6 +19,7 @@ export const useFetch = (requestFn, deps, initialState) => {
     };
 
     asyncRequest();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 
   return {
