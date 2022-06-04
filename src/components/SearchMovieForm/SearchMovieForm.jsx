@@ -17,7 +17,7 @@ export const SearchMovieForm = ({ onSubmit }) => {
 
     onSubmit(query);
 
-    setQuery(' ');
+    setQuery('');
   };
 
   return (
@@ -50,7 +50,7 @@ SearchMovieForm.propTypes = {
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 `;
 
 const Form = styled.form`

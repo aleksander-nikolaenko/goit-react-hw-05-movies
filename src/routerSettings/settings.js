@@ -1,7 +1,7 @@
 export const routesPaths = {
   homePage: '/',
   moviePage: '/movies',
-  movieDetailsPage: '/movies/:movieId',
+  movieDetailsPage: '/movies/:movieId/*',
   cast: '/movies/:movieId/cast',
   reviews: '/movies/:movieId/reviews',
 };

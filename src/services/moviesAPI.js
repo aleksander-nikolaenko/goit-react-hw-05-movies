@@ -8,7 +8,24 @@ export const fetchTrendingMovies = () => {
 };
 
 export const fetchSearchMovies = query => {
+  // if (query === '' || query === null) return;
   return http.get(
     `${BASE_URL}/search/movie/?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`
+  );
+};
+
+export const fetchMovieDetails = id => {
+  return http.get(`${BASE_URL}/movie/${id}?api_key=${API_KEY}`);
+};
+
+export const fetchMovieReviews = id => {
+  return http.get(
+    `${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+  );
+};
+
+export const fetchMovieCast = id => {
+  return http.get(
+    `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=en-US`
   );
 };

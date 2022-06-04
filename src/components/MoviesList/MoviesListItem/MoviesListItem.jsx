@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import noImage from '../../../assets/movie-poster-coming-soon.jpg';
 
 export const MoviesListItem = ({ id, title, img }) => {
+  const location = useLocation();
   return (
     <Item>
-      <Link to={`/movies/${id}`}>
+      <Link to={`/movies/${id}`} state={{ prevUrl: location }}>
         <Wrapper>
           <Img
             src={img ? `https://image.tmdb.org/t/p/w500/${img}` : noImage}
@@ -30,7 +31,6 @@ MoviesListItem.propTypes = {
 
 const Item = styled.li`
   display: flex;
-  flex-basis: calc(100% / 4 - 30px);
   flex-direction: column;
 `;
 
